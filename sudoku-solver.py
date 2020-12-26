@@ -1,3 +1,7 @@
+# script from computerphile video 
+# for solving sudoku puzzle.
+# Remove comments from lines 36-38
+
 import numpy as np
 import time
 
@@ -29,9 +33,9 @@ def possible(y,x,n):
 
 def solve():
     global grid
-    time.sleep(0.05)
-    print(np.matrix(grid))
-    print("\n" * 10)
+#   time.sleep(0.05)
+#   print(np.matrix(grid))
+#   print("\n" * 10)
     for y in range(9) :
         for x in range(9) :
             if grid[y][x] == 0 :
@@ -42,6 +46,10 @@ def solve():
                         grid[y][x] = 0
                 return
     print(np.matrix(grid))
-    input("More?")
+    print("-" * 30)
+    input("Press enter for more solutions\n")
+
+#-----------------
 
 solve()
+
