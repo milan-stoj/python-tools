@@ -22,8 +22,8 @@ while True:
     print("-" * 50)
     print("Your estimated BAC:", BAC)
     if BAC > legal_limit :
-        print("\nStop! You are beyond the legal limit.")
+        print("Stop! You are beyond the legal limit.")
     elif BAC > 2/3 * legal_limit :
-        print("\nSlow-down. You are cutting it close!")
+        print("Slow-down. You are cutting it close!")
     else:
-        print("\nYou are under the legal limit.")
+        print("You are under the legal limit.")
