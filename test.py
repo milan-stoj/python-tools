@@ -1,0 +1,20 @@
+# BAC = ((A / W * r) * 100 ) - (dT * 0.015)
+# A = alcohol consumed in grams (US Standard drink = 14g)
+# W = body-weight in grams
+# r = gender-constant (male = 0.68, female = 0.55)
+
+while True:
+    weight_in_lbs = input("Enter you weight in lbs: ")
+    weight_in_grams = int(weight_in_lbs) * 453.592
+    gender_constant = 0.68
+    standard_drink_weight = 14
+
+    drinks_consumed = float(input("How many drinks have you consumed?: "))
+    alcohol_consumed = drinks_consumed * standard_drink_weight
+
+    hrs_elapsed = float(input("How many hours have elapsed?: "))
+
+    BAC = ((alcohol_consumed)/(weight_in_grams * gender_constant)) * 100 - (hrs_elapsed * 0.015)
+
+    print("-" * 50)
+    print("Your estimated BAC =", BAC)
