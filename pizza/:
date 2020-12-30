@@ -14,17 +14,19 @@ def run(customer, address):
         print_customer_info(customer, address)
         print_store_details(details)
         print_menu(menu_options)
-        switch_to_func(input("Please select your option: "))
+        numbers_to_func(input("Please select your option: "))
 
 def Search():
     print_header("Search")
+
 
 def Add():
     print_header("Add")
 
 menu_options = {"1" : Search, "2" : Add}
 
-def switch_to_func(argument):
+def numbers_to_func(argument):
     switcher = menu_options
-    func = switcher.get(argument, lambda : print_header("invalid selection"))
+    func = switcher.get(argument, "invalid selection")
     func()
+    input()

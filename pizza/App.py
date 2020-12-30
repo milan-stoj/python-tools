@@ -1,5 +1,4 @@
 from pizzapi import *
-from View import *
 from Controller import *
 
 
