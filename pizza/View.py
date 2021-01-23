@@ -1,4 +1,5 @@
 from os import system, name
+from tabulate import tabulate
 
 
 def clear():
@@ -16,18 +17,31 @@ def print_customer_info(customer, address):
           "Phone: " + customer.phone + "\n" +
           "Address: " + address.street + ", " + address.city + ", " +
           address.region + " " + address.zip)
+    new_line()
 
 def print_store_details(details):
     print_header("CLOSEST STORE")
     print("Store ID: " + details["StoreID"] + "\n" +
           "Store Address: " + details["StreetName"] + "\n" +
-          "Store Phone: " + details["Phone"] + "\n")
+          "Store Phone: " + details["Phone"])
+    new_line()
 
 def print_menu(menu_options):
+    print_header("Main Menu")
     for key in menu_options:
         print(key, menu_options[key].__name__)
 
 def print_order(order):
+    data = []
+    total = 0
     print_header("Order")
     for i in order:
-        print(i['Name'])
+        data.append([i['Name'], i['Price']])
+        total = total + float(i['Price'])
+
+    print(tabulate(data,headers=["Name", "Price ($)"]))
+    print("\nTotal: $%.2f" % total)
+    new_line()
+
+def new_line():
+    print("")

@@ -35,7 +35,6 @@ def Search():
 def Add():
     print_header("Add")
     order.add_item(input("Please enter product code: "))
-    input("Press enter to continue")
 
 menu_options = {"1" : Display, "2" : Search, "3" : Add}
 
