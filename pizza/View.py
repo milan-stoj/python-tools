@@ -26,3 +26,8 @@ def print_store_details(details):
 def print_menu(menu_options):
     for key in menu_options:
         print(key, menu_options[key].__name__)
+
+def print_order(order):
+    print_header("Order")
+    for i in order:
+        print(i['Name'])
